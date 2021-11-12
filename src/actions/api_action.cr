@@ -11,4 +11,5 @@ abstract class ApiAction < Lucky::Action
   # Add 'include Api::Auth::SkipRequireAuthToken' to your actions to allow all requests.
   include Api::Auth::RequireAuthToken
   include Lucky::EnforceUnderscoredRoute
+  include Lucky::Paginator::BackendHelpers
 end
