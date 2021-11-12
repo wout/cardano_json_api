@@ -1,0 +1,21 @@
+version: '2.4'
+
+services:
+  postgres:
+    image: postgres:13.0
+    volumes:
+      - .dockerdev/.psqlrc:/root/.psqlrc:ro
+      - postgres:/var/lib/postgresql/data
+      - ./log:/root/log:cached
+    environment:
+      PSQL_HISTFILE: /root/log/.psql_history
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 15432:5432
+    healthcheck:
+      test: pg_isready -U postgres -h 127.0.0.1
+      interval: 5s
+
+volumes:
+  postgres:
+  redis:
