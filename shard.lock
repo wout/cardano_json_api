@@ -56,6 +56,10 @@ shards:
     git: https://github.com/luckyframework/lucky.git
     version: 0.28.0
 
+  lucky-swagger:
+    git: https://github.com/marmaxev/lucky-swagger.git
+    version: 0.1.0+git.commit.67958c698b9180e2de05f90a98d033b8e8c902e6
+
   lucky_env:
     git: https://github.com/luckyframework/lucky_env.git
     version: 0.1.4
