@@ -5,6 +5,9 @@ class Cardano::Block < Cardano::BaseModel
     column slot_no : Int32?
     column epoch_slot_no : Int32?
     column block_no : Int32?
+    column size : Int32
+    column time : Time
+    column tx_count : Int64
 
     belongs_to previous : Cardano::Block?
   end

@@ -15,10 +15,13 @@ class Cardano::BlockSerializer < RecordSerializer
   private def render_expanded : NamedTuple
     {
       attributes: {
-        epoch_no:      @block.epoch_no,
-        slot_no:       @block.slot_no,
-        epoch_slot_no: @block.epoch_slot_no,
-        block_no:      @block.block_no,
+        block:      @block.block_no,
+        epoch:      @block.epoch_no,
+        epoch_slot: @block.epoch_slot_no,
+        slot:       @block.slot_no,
+        size:       @block.size,
+        time:       @block.time,
+        tx_count:   @block.tx_count,
       },
       relationships: {
         previous: previous_block,
