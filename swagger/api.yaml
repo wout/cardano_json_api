@@ -1,0 +1,90 @@
+---
+openapi: 3.0.0
+info:
+  title: API
+  description: API for Lucky project
+  version: 1.0.0
+paths:
+  /api/blocks:
+    get:
+      tags:
+      - Blocks
+      summary: Api Blocks Index
+      description: Api Blocks Index
+      parameters:
+      - name: page
+        in: query
+        description: ""
+        required: false
+        schema:
+          type: Int32
+      - name: per_page
+        in: query
+        description: ""
+        required: true
+        schema:
+          type: Int32
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              examples: ""
+  /api/blocks/{block_id}:
+    get:
+      tags:
+      - Blocks
+      summary: Api Blocks Show
+      description: Api Blocks Show
+      parameters:
+      - name: block_id
+        in: path
+        description: ""
+        required: true
+        schema:
+          type: ""
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              examples: ""
+  /api/me:
+    get:
+      tags:
+      - Me
+      summary: Api Me Show
+      description: Api Me Show
+      parameters: []
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              examples: ""
+  /api/sign_ins:
+    post:
+      tags:
+      - SignIns
+      summary: Api SignIns Create
+      description: Api SignIns Create
+      parameters: []
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              examples: ""
+  /api/sign_ups:
+    post:
+      tags:
+      - SignUps
+      summary: Api SignUps Create
+      description: Api SignUps Create
+      parameters: []
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              examples: ""

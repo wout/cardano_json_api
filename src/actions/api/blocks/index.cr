@@ -16,8 +16,8 @@ class Api::Blocks::Index < ApiAction
         self:  Api::Blocks::Index.url(page: current_page),
         first: Api::Blocks::Index.url,
         last:  Api::Blocks::Index.url(page: pages.total),
-        next:  Api::Blocks::Index.url,
-        prev:  Api::Blocks::Index.url,
+        next:  (Api::Blocks::Index.url(page: pages.next_page) if pages.next_page),
+        prev:  (Api::Blocks::Index.url(page: pages.previous_page) if pages.previous_page),
       })
     else
       render_json(blocks, {

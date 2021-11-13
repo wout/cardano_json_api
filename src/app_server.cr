@@ -6,13 +6,13 @@ class AppServer < Lucky::BaseAppServer
       Lucky::ForceSSLHandler.new,
       Lucky::HttpMethodOverrideHandler.new,
       Lucky::LogHandler.new,
+      LuckySwagger::Handlers::WebHandler.new(
+        swagger_url: "/swagger",
+        folder: "./swagger"
+      ),
       Lucky::ErrorHandler.new(action: Errors::Show),
       Lucky::RemoteIpHandler.new,
       Lucky::RouteHandler.new,
-
-      # Disabled in API mode:
-      # Lucky::StaticCompressionHandler.new("./public", file_ext: "gz", content_encoding: "gzip"),
-      # Lucky::StaticFileHandler.new("./public", fallthrough: false, directory_listing: false),
       Lucky::RouteNotFoundHandler.new,
     ] of HTTP::Handler
   end
