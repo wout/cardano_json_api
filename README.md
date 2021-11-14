@@ -9,10 +9,13 @@ This project is nowhere near ready for use. Some parts will be extracted into
 different shards, like an ORM mapping extension for Avram.
 
 ## Introduction
-This is a fully self-hosted API for Cardano, including cardano-node,
-[cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync) and a
-Postgres database containing a copy of the blockchain. It also includes IPFS 
-endpoints to upload and retreive files.
+This is a fully self-hosted API for Cardano depending on
+[cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync), which
+includes a copy of cardano-node and a Postgres database containing a copy of the
+blockchain.
+
+This app also includes [IPFS](https://ipfs.io/) endpoints to upload and
+retreive files, as well as endpoints to create and sign transactions.
 
 ## Usage
 On a server with `docker` and `docker-compose` installed, run:
